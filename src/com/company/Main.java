@@ -24,6 +24,18 @@ public class Main {
             aluno.getDisciplinas().add(disciplina);
 
         }
+
+        int escolha = JOptionPane.showConfirmDialog(null,"Deseja remoover alguma disciplina?");
+
+        if(escolha == 0){
+            String disciplinaPraRemover = JOptionPane.showInputDialog("Qual a disciplina 1,2,3,4?");
+            aluno.getDisciplinas().remove(Integer.valueOf(disciplinaPraRemover).intValue());
+        }
+
         System.out.print(Double.toString(aluno.getMediaNota()));
+
+        for(Disciplina disciplina : aluno.getDisciplinas()){
+            System.out.printf("quantidade de materia" + disciplina.getDisciplina());
+        }
     }
 }
