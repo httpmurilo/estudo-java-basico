@@ -3,29 +3,27 @@ package com.company;
 import com.company.exemplos.Lista.Aluno;
 import com.company.exemplos.Lista.Disciplina;
 
+import javax.swing.*;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         Aluno aluno = new Aluno();
         aluno.setId(1);
         aluno.setName("Murilo Eduardo");
 
-        Disciplina disciplina1 = new Disciplina();
-        disciplina1.setDisciplina("POO");
-        disciplina1.setNota(90);
+        for (int pos = 1; pos <= 4; pos++) {
+            String nomeDisciplina = JOptionPane.showInputDialog("nome da disciplina "+pos+"");
+            String notaDaDisciplina = JOptionPane.showInputDialog("nota da disciplina "+pos+"");
 
-        aluno.getDisciplinas().add(disciplina1);
+            Disciplina disciplina = new Disciplina();
+            disciplina.setDisciplina(nomeDisciplina);
+            disciplina.setNota(Double.parseDouble(notaDaDisciplina));
 
-        Disciplina disciplina2 = new Disciplina();
-        disciplina2.setDisciplina("Banco de dados");
-        disciplina2.setNota(80);
+            aluno.getDisciplinas().add(disciplina);
 
-
-        Disciplina disciplina3 = new Disciplina();
-        disciplina3.setDisciplina("Banco de dados");
-        disciplina3.setNota(80);
-
-
+        }
+        System.out.print(Double.toString(aluno.getMediaNota()));
     }
 }
