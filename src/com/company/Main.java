@@ -21,7 +21,10 @@ public class Main {
         disciplina2.setDisciplina("Banco de dados");
         disciplina2.setNota(80);
 
-        
+
+        Disciplina disciplina3 = new Disciplina();
+        disciplina3.setDisciplina("Banco de dados");
+        disciplina3.setNota(80);
 
 
     }

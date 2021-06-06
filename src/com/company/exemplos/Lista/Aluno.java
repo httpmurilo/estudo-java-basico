@@ -44,6 +44,10 @@ public class Aluno {
     private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
     public double getMediaNota(){
-        return 0;
+        double somaNotas = 0;
+        for (Disciplina disciplina : disciplinas){
+            somaNotas += disciplina.getNota();
+        }
+        return somaNotas / disciplinas.size();
     }
 }
