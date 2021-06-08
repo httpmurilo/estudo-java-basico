@@ -1,6 +1,6 @@
 package com.company.exemplos.Heranca;
 
-public class SecretarioHeranca extends Pessoa {
+public class SecretarioHeranca extends Pessoa implements PermitirAcesso {
     public String getRegistro() {
         return registro;
     }
@@ -25,8 +25,47 @@ public class SecretarioHeranca extends Pessoa {
         this.experiencia = experiencia;
     }
 
+    @Override
+    public String toString() {
+        return "SecretarioHeranca{" +
+                "registro='" + registro + '\'' +
+                ", nivelCargo='" + nivelCargo + '\'' +
+                ", experiencia='" + experiencia + '\'' +
+                ", nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                ", registroGeral='" + registroGeral + '\'' +
+                ", numeroCpf='" + numeroCpf + '\'' +
+                ", nomeMae='" + nomeMae + '\'' +
+                ", nomePai='" + nomePai + '\'' +
+                '}';
+    }
+
     private String registro;
     private String nivelCargo;
     private String experiencia;
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    private String login;
+    private String senha;
+
+    @Override
+    public boolean autenticar() {
+        return login.equals("admin");
+    }
 }
