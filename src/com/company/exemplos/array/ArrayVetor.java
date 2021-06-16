@@ -1,16 +1,19 @@
 package com.company.exemplos.array;
 
+import javax.swing.*;
+
 public class ArrayVetor {
     public static void main(String[] args) {
 
-        /* array pode ser todos os tipos de dados e objetos*/
-        double[] notas = new double[4];
-        notas[0] = 9.8;
-        notas[1] = 9.4;
-        notas[2] = 4.0;
-        notas[3] = 3.0;
 
-        for (int pos = 0; pos <5 ; pos++){
+        String posicoes = JOptionPane.showInputDialog("Quantas posições o array deve ter?");
+        double[] notas = new double[Integer.parseInt(posicoes)];
+
+        for(int pos =0; pos < notas.length; pos++) {
+            String valor = JOptionPane.showInputDialog("qual o valor da posição" + pos);
+            notas[pos] = Double.parseDouble(valor);
+        }
+            for (int pos = 0; pos < notas.length ; pos++){
             System.out.println("nota" + (pos + 1) + "e" + notas[pos]);
         }
     }
